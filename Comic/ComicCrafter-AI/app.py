@@ -234,6 +234,19 @@ from PIL import Image
 from reportlab.lib.pagesizes import A4
 from reportlab.platypus import SimpleDocTemplate, Image as RLImage, Spacer
 import traceback
+# --- Dark Mode Toggle ---
+dark_mode = st.sidebar.checkbox("🌙 Dark Mode")
+if dark_mode:
+    st.markdown(
+        """
+        <style>
+        body { background-color: #111; color: white; }
+        .stButton>button { background-color: #333; color: white; }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
 
 # --- Backend Import ---
 # Assuming BACKEND.py with generate_panels, generate_image, process_comic exists
@@ -261,6 +274,8 @@ STYLE_DESCRIPTIONS = {
     "Anime": "🌸 Vibrant colors, cel shading, large expressive eyes, detailed hair, dynamic poses.",
     "American": "💥 Bold outlines, heavy inking, bright saturated colors, exaggerated muscular features.",
     "Belgian": " Tintin-style. Clean lines, soft flat shading, rich detailed backgrounds, semi-realistic.",
+    "Noir": "🕵️‍♂️ High contrast B&W, dramatic lighting, moody shadows, vintage detective comic style.",
+
 }
 
 # --- Function to Add Background Image ---
