@@ -377,7 +377,7 @@ if generate_button:
     try:
         # --- Step 1: Generate Panels ---
        with st.spinner("⏳ Step 1/3: Generating panel descriptions & dialogues... (Mocked Data)"):
-       panel_data = [{"Description": f"Scene {i+1}", "Text": f"This is panel {i+1}"} for i in range(6)]
+           panel_data = [{"Description": f"Scene {i+1}", "Text": f"This is panel {i+1}"} for i in range(6)]
 
             # Add a small visible confirmation inside the spinner context if desired
             # st.write("Panel data structure received.")
